@@ -1,0 +1,1107 @@
+/* ==========================================================================
+   Escape Hatch In The House v2.0
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* ==========================================================================
+   Custom Fonts
+   ========================================================================== */
+
+@font-face {
+    font-family: 'DDCHardwareRegular';
+    src: url('fonts/DDCHardwareRegular.eot');
+    src: url('fonts/DDCHardwareRegular.eot') format('embedded-opentype'),
+         url('fonts/DDCHardwareRegular.woff2') format('woff2'),
+         url('fonts/DDCHardwareRegular.woff') format('woff'),
+         url('fonts/DDCHardwareRegular.ttf') format('truetype'),
+         url('fonts/DDCHardwareRegular.svg#DDCHardwareRegular') format('svg');
+}
+  
+/* ==========================================================================
+   Escape Hatch styles
+   ========================================================================== */
+
+body {
+    font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+    color: black;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    overflow-x: hidden;
+    background-color: #1a6684;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'DDCHardwareRegular', 'Helvetica', 'Arial', sans-serif;
+}
+
+.ddc {
+    font-family: 'DDCHardwareRegular', 'Helvetica', 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 8.85rem;
+    line-height: 6.8rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 6rem;
+    line-height: 5rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.full {
+    background-color: #1a6684;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.full-c {
+    background-color: rgba(9,194,182,1);
+}
+
+.hero {
+    background:
+        url(../img/plaid-hero@1x.jpg) no-repeat left center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.hero .animated {
+    animation-delay: 0 !important;
+    -webkit-animation-delay: 0 !important;
+}
+
+header .animated {
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+.esclogo {
+    background: url(../img/escape-hatch-logo.svg) no-repeat top left;
+    background-size: contain;
+}
+
+.large-logo {
+    width: 80px;
+    height: 60.66px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#introcontain {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 5vw;
+}
+
+#intro2 h3 {
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: 20px;
+    margin-top: 25px;
+}
+
+#carrot {
+    height: 77.2px;
+    width: 80px;
+    position: relative;
+    top: -130px;
+    margin: 0 auto;
+}
+
+/* #carrot .animated {
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+} */
+
+.navbar {
+    display: none;
+    background: transparent;
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.navbar.fixed {
+    display: block;
+    background: transparent;
+    z-index: 9999;
+}
+
+.topbar {
+    display: inline-flex;
+    width: 100%;
+    height: 70px;
+    background: white;
+    align-items: center;
+    box-shadow: 0px 8px 30px -10px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 800;
+    justify-content: space-between;
+}
+
+.whitebar {
+    width: 100%;
+    display: inline-flex;
+    padding-left: 25px;
+}
+
+.redbar {
+    background: #E95263;
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    letter-spacing: 5px;
+    padding: 0 25px;
+}
+
+.small-logo {
+    height: 30.33px;
+    width: 30.33px;
+}
+
+progress {
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            /* appearance: none; */
+    border: none;
+    background-color: transparent;
+    color: #42C3B7;
+    position: relative;
+    z-index: 700;
+    vertical-align: top;
+}
+
+progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+  
+progress::-webkit-progress-value {
+    background-color: #42C3B7;
+}
+  
+progress::-moz-progress-bar {
+    background-color: #42C3B7;
+}
+
+.navname {
+    padding-left: 20px;
+    color: black;
+}
+
+.navname:hover {
+    -webkit-animation: swing 1s;
+    animation: swing 1s;
+}
+
+.redbar:hover {
+    -webkit-animation: pulse 0.5s;
+    animation: pulse 0.5s;
+}
+
+.full-hello {
+    background-color: white;
+    height: 960px;
+    position: relative;
+}
+
+.stripes {
+    background: url(../img/hero-stripes@1x.png) no-repeat top right;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.two-para {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.para {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 538px;
+}
+
+#were {
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    text-align: right;
+    margin-left: 80px;
+}
+
+#who {
+    border-right: solid 1px #ccc;
+    text-align: left;
+    padding-top: 230px;
+    margin-right: 80px;
+}
+
+.full-recipe {
+    height: 100%;
+}
+
+.recipe {
+    background:
+    url(../img/emergency-hatch-desktop@1x.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.overlay-r {
+    background: linear-gradient(rgba(26,149,137,.6) 50%, rgba(26,149,137,1));
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+.recipe-contain {
+    padding: 200px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 auto;
+    justify-content: space-between;
+}
+
+.recipe-contain article {
+    flex-basis: 30%;
+    opacity: 0;   /*  ///// this is so animation works on the article elements */
+}
+
+.slickcontain {
+    padding: 150px 0 0 0;
+    margin-right: -800px;
+}
+
+.twosplit {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 960px;
+    background: white;
+}
+
+.twocontain{
+    min-width: 50%;
+    position: relative;
+    display: flex;
+}
+
+.overlay-t {
+    background:
+    url(../img/diagonal-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#hellyeahoffice {
+    background: 
+    url(../img/office-front@1x.jpg) no-repeat bottom center;
+    background-size: cover;
+    min-height: 100%;
+}
+
+.contain-words {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    margin: 0 23%;
+}
+
+.subhead-center {
+    margin: 10px 0 0 0;
+}
+
+.full-case {
+    overflow: hidden;
+}
+
+.casestudy {
+    background:
+    url(../img/sky-quest-blue-bg.jpg) no-repeat left center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#skyvideo {
+    width: 100%;
+    min-height: auto;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask-image:
+    -webkit-gradient(linear, left 15%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.behind {
+    z-index: -1;
+}
+
+#contact .head-center {
+    max-width: 475px;
+}
+
+#intouch {
+    background:
+    url(../img/gordon-square-2@1x.jpg) no-repeat top center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#overlay {
+    background: linear-gradient( rgba(26,149,137,0.8) 50%, transparent);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+#intouch .subhead-center {
+    margin-bottom: 20px;
+}
+
+.case-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 160px 80px;
+    color: white;
+    z-index: 100;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.case-sidebars {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 5% 0;
+}
+
+.case-sidebars h4 {
+    color: rgba(66, 195, 183, 1);;
+}
+
+.case-headline {
+    max-width: 1020px;
+}
+
+.case-left {
+    max-width: 587px;
+}
+
+.case-right {
+    max-width: 500px;
+    padding-left: 10vw;
+}
+
+.case-right ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.case-right li {
+    padding: 1.5px 0;
+}
+
+.btn-contain {
+    position: relative;
+}
+
+.full-clients {
+    background: #E95263;
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 150px 25px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: 1200px;
+    padding-top: 150px;
+}
+
+.logo img {
+    width: 100%;
+    object-fit: contain;
+}
+
+button {
+    line-height: inherit;
+}
+
+/* ---------------START FORM---------------- */
+
+.contact-container {
+    max-width: 1360px;
+    margin: 160px auto;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+.contact-words {
+    margin-bottom: 20px;
+}
+
+.formrow {
+    display: flex;
+    flex-flow: row;
+    padding: 10px 0;
+}
+
+.formrow .input {
+    flex: 1 1 auto;
+    display: block;
+    width: auto;
+}
+
+.formrow #inline-right {
+    padding-left: 20px;
+}
+
+input, textarea, input::placeholder, textarea::placeholder {
+    font-size: 1rem;
+    color: #1a6684;
+    font-weight: 700;
+}
+
+input[type=text], textarea{
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #1a6684;
+    border-radius: 2px;
+    box-sizing: border-box;
+    resize: vertical;
+    color: #000 !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+textarea:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+/* ---------------END FORM---------------- */
+
+footer h5, a {
+    color: white;
+    text-decoration: none;
+}
+
+.footcontain {
+    max-width: 1360px;
+    margin: 65px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+#foot-left {
+    padding-right: 20px;
+}
+
+#foot-left p {
+    display: inline;
+}
+
+#foot-right {
+    text-align: right;
+}
+
+a .button {
+    font-weight: 700;
+    font-size: 0.875rem;
+    font-family: inherit;
+}
+
+.button::before, .button::after {
+    position: absolute;
+    content: '';
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 35px;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    color: white;
+    -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 0.8rem;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    background-color: #E95263;
+    font-size: 0.875rem;
+    letter-spacing: 0.025rem;
+    border:0.5px solid #E95263;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button::before {
+    bottom: -8px;
+    height: 8px;
+    width: 100%;
+    left: 4px;
+    -webkit-transform: skewX(45deg);
+          transform: skewX(45deg);
+    background-color: #D83D4E;
+}
+
+.button::after {
+    right: -8px;
+    height: 100%;
+    width: 8px;
+    bottom: -4px;
+    -webkit-transform: skewY(45deg);
+          transform: skewY(45deg);
+    background-color: #D83D4E;
+    border:0.5px solid #D83D4E;
+}
+
+.button:hover {
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.button:hover::before {
+    bottom: -5px;
+    height: 5px;
+    left: 3px;
+}
+
+.button:hover::after {
+    right: -5px;
+    width: 5px;
+    bottom: -3px;
+}
+
+.yesmobile {
+    display: none !important;
+}
+
+.formbuffer {
+    padding-bottom: 56px;
+}
+
+.formrow .button {
+    position: absolute;
+    top:40px;
+    left:87px;
+    background-color: #1a6684;
+    border: 0.5px solid #1a6684;
+    padding: 12px 59px;
+}
+
+.formrow .button::before {
+    background-color: #134A5F;
+}
+
+.formrow .button::after {
+    background-color: #134A5F;
+    border: 0.5px solid #134A5F;
+}
+
+#email-invalid {
+    color: white;
+    font-weight: 700;
+}
+
+.bodylink {
+    color: #42C3B7;
+    text-decoration: underline;
+    font-size: 700;
+}
+
+.bodylink:hover {
+    color: #1A9589;
+}
+
+.footlink:hover {
+    color: rgba(255, 255, 255, 0.8)
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+ ========================================================================== */
+
+ @media only screen and (max-width: 1500px) {
+
+    #introcontain {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1380px) {
+
+    .twosplit {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+
+    h1 {
+        font-size: 11.3vw;
+        line-height: 8.5vw;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .twosplit {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .twocontain {
+        min-height: 100%;
+    }
+
+    .contain-words {
+        margin: 160px 80px;
+    }
+
+    .contact-words {
+        margin-bottom: 30px;
+    }
+
+    #hellyeahoffice {
+        height: 768px;
+        min-width: 100%;
+    }
+
+    #intro2 h3 {
+        font-size: 4vw;
+        color: white;
+        letter-spacing: 1.5vw;
+    }
+    
+    .recipe-contain {
+        flex-flow: column;
+        padding: 60px 0 0 0;
+    }
+
+    .recipe-contain article {
+        padding-bottom: 40px;
+    }
+
+    .recipe-contain article:nth-child(3) {
+        padding-bottom: 0;
+    }
+
+    .slickcontain {
+        padding: 144px 0 0 0;
+    }
+
+    .topbar {
+        height: 50px;
+    }
+
+    .redbar {
+        max-width: 225px;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+    .navname {
+        padding-left: 15px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .case-sidebars {
+        display: flex;
+        flex-flow: column;
+        padding: 5% 0;
+    }
+
+    .case-right {
+        padding: 50px 0 0 0;
+    }
+
+    .case-left {
+        padding: 50px 0 0 0;
+    }
+
+    .notmobile {
+        display: none !important;
+    }
+
+    .yesmobile {
+        display: inline-block !important;
+    }
+
+    .slickcontain {
+        padding: 219px 0 0 0 !important;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+
+    .hero {
+        background:
+        url(../img/plaid-hero-mobile@1x.jpg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .rotate {
+        transform: rotate(-45deg);
+        margin-top: -150px;
+    }
+
+    #intro2 h3 {
+        margin-top: 0px;
+        line-height: 1.2rem;
+    }
+
+    #intro2 {
+        line-height: 0;
+    }
+
+    h2 {
+        font-size: 3.125rem;
+        line-height: 3.125rem;
+    }
+
+    .case-container {
+        padding: 80px 40px;
+    }
+
+    .subhead-center {
+        margin: 15px 0 30px 0;
+    }
+
+    h1 {
+       font-size: 4.35rem;
+       line-height: 3.3rem;
+    }
+
+    .large-logo {
+        width: 60px;
+        height: 45.5px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    #hellyeahoffice {
+        height: 375px;
+    }
+
+    .formrow {
+        flex-flow: column;
+    }
+
+    .formrow #inline-right {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .full-c {
+        max-height: 100%;
+        height: 100%;
+    }
+
+    .stripes {
+        background-size: 350px 350px;
+    }
+
+    .case-right {
+        padding-top: 40px;
+    }
+
+    .contact-container {
+        padding: 0 40px;
+        margin: 80px 0;
+    }
+
+    .contain-words {
+        margin: 80px 40px;
+    }
+
+    .full-hello {
+        height: 730px;
+    }
+    
+    .two-para {
+        flex-flow: column;
+        margin: 0 40px;
+        border-left: solid 1px #CCC;
+        border-right: solid 1px #CCC;
+        width: auto;
+    }
+
+    .para, #who, #were {
+        border: none;
+        text-align: left;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding-top: 0;
+    }
+
+    #were {
+        margin-top: 50px !important;
+    }
+    
+    #who {
+        padding-top: 20px !important;
+    }
+
+    .stripes {
+        background-size: 146px 146px;
+    }
+
+    .slickcontain {
+        padding: 160px 0 0 0 !important;
+    }
+
+    .footcontain {
+        margin: 40px auto;
+        padding: 0 40px;
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+
+    #foot-left {
+        padding-right: 0;
+    }
+
+    #foot-left p {
+        display: block;
+        line-height: 1.4;
+    }
+
+    #foot-right {
+        text-align: center;
+        padding: 20px 0 0 0;
+    }
+
+    .hide {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+
+    .logo-flex {
+        grid-template-columns: repeat(auto-fit, 120px);
+        grid-gap: 80px 75px;
+        padding-top: 80px;
+    }
+
+    .logo img {
+        max-width: 100%;
+    }
+
+    .whitebar {
+        padding-left: 10px;
+    }
+
+    .navname {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .redbar {
+        padding: 0 10px;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .button {
+        top: 60px;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .logo-flex {
+        grid-gap: 80px 30px;
+    }
+
+    #carrot {
+        top: -170px;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+
+.logo-flex {
+    grid-template-columns: repeat(auto-fit, 100px);
+    }
+}
+
+
+/* ==========================================================================
+   Media Queries for normalize css fixes.
+   ========================================================================== */
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
