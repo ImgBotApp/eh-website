@@ -1,0 +1,24 @@
+{
+  "name": "eh-webstite",
+  "version": "1.0.0",
+  "description": "Imaginative Thinking",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcape/eh-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexcape/eh-website/issues"
+  },
+  "homepage": "https://github.com/alexcape/eh-website#readme",
+  "devDependencies": {
+    "gulp-clean-css": "^3.9.2",
+    "gulp-rename": "^1.2.2"
+  },
+  "dependencies": {}
+}
