@@ -17,6 +17,10 @@
 					   .removeClass('fixed');
 			});
 		},
+		smoothScroll = function() {
+			var scroll = new SmoothScroll('#intouch'),
+				easeInOutQuart = new SmoothScroll('[data-easing="easeInOutQuart"]', {easing: 'easeInOutQuart'});
+		},
 		slickFunc = function () {
 			var $multipleItems = $('.multiple-items'),
 				slickOptions = {
@@ -73,6 +77,7 @@
 	$document.on({
 		ready: function() {
 			stickyNavFunc();
+			smoothScroll();
 			slickFunc();
 			progressBarFunc();
 			fadeInFunc();

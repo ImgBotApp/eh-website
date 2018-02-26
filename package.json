@@ -20,5 +20,7 @@
     "gulp-clean-css": "^3.9.2",
     "gulp-rename": "^1.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
